@@ -1,0 +1,264 @@
+/* Reset básico de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: #fff;
+    font-size: 16px;
+    overflow: hidden; /* Esconde qualquer elemento que ultrapasse a tela */
+}
+
+/* ---------------------- */
+/* Estilo do Cabeçalho */
+/* ---------------------- */
+header {
+    position: fixed;
+    width: 90vw;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: 1fr 600px;
+    align-items: center;
+    gap: 90px;
+    z-index: 2;
+}
+
+header img {
+    width: 250px;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
+}
+
+/* ---------------------- */
+/* Seção Principal */
+/* ---------------------- */
+section {
+    background-image: radial-gradient(#7f3d9e, #6d00d9);
+    height: 100vh;
+    position: relative;
+}
+
+/* Área onde ficam os carros */
+section .list {
+    width: 70vw;
+    margin: auto;
+    height: 100%;
+    position: relative;
+}
+
+/* Cada carro (slide) */
+section .list .item {
+    position: absolute;
+    inset: 0;
+}
+
+/* Imagem do carro */
+section .list .item .car-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 70%;
+}
+
+section .list .item .car-img img {
+    width: 100%;
+    transform: rotate(-23deg);
+}
+
+/* Área de texto (informações do carro) */
+section .list .item .content {
+    position: absolute;
+    right: 100px;
+    width: 70%;
+    height: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    gap: 20px;
+}
+
+section .list .item .content .car-information {
+    font-weight: bold;
+}
+
+section .list .item .content h2 {
+    font-size: 8em;
+    line-height: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section .list .item .content .description {
+    color: #d9d9d9;
+    font-size: 12px;
+    text-align: right;
+    max-width: 400px;
+}
+
+section .list .item .content .information {
+    border-radius: 30px;
+    height: 35px;
+    width: 120px;
+    text-transform: uppercase;
+    border: 2px solid #791fd3;
+    background-color: #beff1b;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Linha branca horizontal de fundo */
+section .list::before {
+    content: '';
+    position: absolute;
+    height: 200px;
+    width: 100%;
+    top: 50%;
+    border-top: 1px solid #fff;
+}
+
+/* ---------------------- */
+/* Botões de Navegação */
+/* ---------------------- */
+.arrows {
+    width: 70vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -25px);
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrows button:nth-child(1) img {
+    transform: scale(-1); /* Inverte a seta esquerda */
+}
+
+.arrows button {
+    top: 60%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.arrows button img {
+    width: 30px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.arrows button:hover {
+    background-color: #beff1b; /* Efeito hover */
+}
+
+/* ---------------------- */
+/* Indicadores (números + bolinhas) */
+/* ---------------------- */
+.indicators {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 200px;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 15px;
+}
+
+.indicators .numbers {
+    font-size: 5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.indicators ul {
+    display: flex;
+    gap: 10px;
+}
+
+.indicators ul li {
+    width: 50px;
+    height: 5px;
+    background-color: #beff1b;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.indicators ul .active {
+    background-color: #fff;
+}
+
+/* ---------------------- */
+/* Efeitos de Transição dos Slides */
+/* ---------------------- */
+
+/* Estado padrão: Slide fora da tela à direita + invisível */
+section .list .item {
+    transform: translateX(100vw);
+    transition: 0.5s;
+    opacity: 0;
+}
+
+/* Imagem sem rotação no estado padrão */
+section .list .item .car-img img {
+    transform: rotate(0);
+    transition: 0.5s;
+    transition-delay: 0.3s;
+}
+
+/* Textos saindo da direita e invisíveis */
+section .list .item .content .car-information,
+section .list .item .content h2,
+section .list .item .content .description,
+section .list .item .content .information {
+    transform: translateX(200px);
+    transition: 0.7s;
+    transition-delay: 0.3s;
+    opacity: 0;
+}
+
+/* Ajustes de delay para cada elemento */
+section .list .item .content h2 {
+    transition-delay: 0.5s;
+}
+
+section .list .item .content .description {
+    transition-delay: 0.7s;
+}
+
+section .list .item .content .information {
+    transition-delay: 0.9s;
+}
+
+/* Estado Ativo: Slide visível e no lugar */
+section .list .actived {
+    transform: translateX(0);
+    transition: 0.5s;
+    opacity: 1;
+}
+
+/* Imagem rotacionada no ativo */
+section .list .actived .car-img img {
+    transform: rotate(-20deg);
+}
+
+/* Textos entrando visíveis no ativo */
+section .list .actived .content .car-information,
+section .list .actived .content h2,
+section .list .actived .content .description,
+section .list .actived .content .information {
+    transform: translateX(0);
+    opacity: 1;
+}

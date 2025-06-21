@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS -->
+    <title>FP Selection</title>
+</head>
+
+<body>
+
+    <!-- Início do cabeçalho -->
+    <header>
+        <img src="./img/logo.png" alt="Logo da loja de carros"> <!-- Logo -->
+
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Carros</li>
+                <li>Fale Conosco</li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Fim do cabeçalho -->
+
+    <!-- Seção principal onde ficam os carros -->
+    <section id="container">
+
+        <!-- Lista de carros -->
+        <div class="list">
+
+            <!-- Primeiro carro (Porsche) -->
+            <div class="item actived"> <!-- Começa como o carro ativo -->
+                <div class="car-img">
+                    <img src="./img/porsche.png" alt="Porsche">
+                </div>
+                <div class="content">
+                    <p class="car-information">Único Dono</p>
+                    <h2>911 Turbo</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet consectetur debitis aliquid harum officia id ut, soluta officiis fugit, ex ipsam, cupiditate ullam ducimus. Mollitia non quidem fuga veniam odit?.</p>
+                    <button class="information">Saiba Mais</button>
+                </div>
+            </div>
+
+            <!-- Segundo carro (Ferrari) -->
+            <div class="item">
+                <div class="car-img">
+                    <img src="./img/ferrari.png" alt="Ferrari">
+                </div>
+                <div class="content">
+                    <p class="car-information">Conversível</p>
+                    <h2>Ferrari</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sint, dolores alias rem suscipit aspernatur iste ratione aut? Nihil earum facere enim repellendus assumenda animi qui similique neque. Voluptates, laudantium..</p>
+                    <button class="information">Saiba Mais</button>
+                </div>
+            </div>
+
+            <!-- Terceiro carro (Lamborghini) -->
+            <div class="item">
+                <div class="car-img">
+                    <img src="./img/lamborghini.png" alt="Lamborghini">
+                </div>
+                <div class="content">
+                    <p class="car-information">2015</p>
+                    <h2>Lamborghini</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur id nisi impedit natus. Quis dolor assumenda esse, sed molestiae fuga aliquam dolore soluta, animi fugit voluptate est laudantium quibusdam dolores..</p>
+                    <button class="information">Saiba Mais</button>
+                </div>
+            </div>
+
+            <!-- Indicadores (Número grande + bolinhas) -->
+            <div class="indicators">
+                <div class="numbers">01</div> <!-- Número do carro atual -->
+                <ul>
+                    <li class="active"></li> <!-- Primeiro indicador (ativo) -->
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+
+        </div>
+        <!-- Fim da lista de carros -->
+
+        <!-- Botões de navegação -->
+        <div class="arrows">
+            <button id="previous">
+                <img src="./img/arrow.png" alt="Seta esquerda">
+            </button>
+            <button id="next">
+                <img src="./img/arrow.png" alt="Seta direita">
+            </button>
+        </div>
+
+    </section>
+    <!-- Fim da seção principal -->
+
+    <!-- Importando o JavaScript -->
+    <script src="./scripts.js"></script>
+</body>
+
+</html>
